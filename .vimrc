@@ -1,4 +1,5 @@
 " ######### Basics #########
+
 set number " enable line numbers
 if !exists("g:syntax_on") " Enable syntax highlighting, only once
     syntax enable
@@ -11,20 +12,24 @@ set autoindent " continue (?) current indentation level on <Enter>
 set expandtab " insert tabs as whitespaces
 
 " ######### Window Layout #########
+
 set showcmd " Display previous command in bottom bar
 set wildmenu " visual autocomplete for command menu
 
 " ######### Colours #########
+
 colorscheme badwolf 
 highlight ColorColumn ctermbg=25 guibg=lightgrey
 
 " ######### Highlighting #########
+
 set noswapfile " disable the swapfile
 set hlsearch " highlight all results
 set ignorecase " ignore case in search
 set incsearch " show search results as you type
 
 " ######### Remappings #########
+
 let mapleader="," " lead mappings with a comma
 
 " exit insert mode from home row
@@ -33,3 +38,39 @@ inoremap kj <ESC>
 
 " press space to un-highlight search results
 nnoremap <leader><space> :let @/=""<CR> 
+
+" ######### Configure vim-plug #########
+
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+" vim-airline - display a status bar at the bottom of your window
+Plug 'vim-airline/vim-airline'
+" vim-airline-themes
+Plug 'vim-airline/vim-airline-themes'
+" deliminate - syntax aware quote/bracket completion
+Plug 'raimondi/delimitmate'
+" sytastic - syntax checking
+Plug 'scrooloose/syntastic'
+
+call plug#end()
+
+" ######### Syntastic - Plugin Settings #########
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" ######### vim-airline-themes - Plugin Settings #########
+
+let g:airline_theme='powerlineish'
