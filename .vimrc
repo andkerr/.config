@@ -53,6 +53,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'raimondi/delimitmate'
 " trailing-whitespace - highlights and allows for quick removal of whitespace
 Plug 'bronson/vim-trailing-whitespace'
+" youcompleteme - code completion suggestions
+" Plug 'valloric/youcompleteme'
 
 call plug#end()
 
