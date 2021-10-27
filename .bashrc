@@ -8,6 +8,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# direct .bashrc to read custom prompt script
+if [ -f $HOME/.prompt ]; then
+    . $HOME/.prompt
+fi
+
+# Setting PATH for custom shell scripts
+PATH=$PATH:$HOME/bin/
+
 # >>> aliases >>>
 
 # long file format
