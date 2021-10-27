@@ -19,12 +19,11 @@ set wildmenu " visual autocomplete for command menu
 
 " ######### Colours #########
 
-colorscheme badwolf 
+colorscheme molokai
 highlight ColorColumn ctermbg=25 guibg=lightgrey
 
 " ######### Highlighting #########
 
-set noswapfile " disable the swapfile
 set hlsearch " highlight all results
 set ignorecase " ignore case in search
 set incsearch " show search results as you type
