@@ -15,6 +15,7 @@ set wildmenu " visual autocomplete for command menu
 
 colorscheme molokai
 
+set mouse=a " enable mouse support
 
 set hlsearch " highlight all results
 set ignorecase " ignore case in search
