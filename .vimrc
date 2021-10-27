@@ -6,9 +6,10 @@ if !exists("g:syntax_on") " Enable syntax highlighting, only once
 endif
 set colorcolumn=80 " mark 80 char. limit
 set cursorline
-set tabstop=4 " Tabs are 4 white spaces wide
 set softtabstop=4 " Backspace following tab rmvs. all 4 white spaces
+
 set autoindent " continue (?) current indentation level on <Enter>
+set shiftwidth=4
 set expandtab " insert tabs as whitespaces
 
 " ######### Window Layout #########
@@ -70,6 +71,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Werror -pedantic"
 
 " ######### vim-airline-themes - Plugin Settings #########
 
