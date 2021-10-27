@@ -3,6 +3,10 @@ if [ -f $HOME/.bashrc ]; then
     . $HOME/.bashrc
 fi
 
+if [ -f $HOME/.prompt ]; then
+    . $HOME/.prompt
+fi
+
 # Setting PATH for PostgreSQL
 PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH
