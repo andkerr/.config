@@ -52,8 +52,7 @@ Plug 'scrooloose/nerdtree'
 " deliminate - smart bracket and quote completion
 Plug 'raimondi/delimitmate'
 " trailing-whitespace - highlights and allows for quick removal of whitespace
-Plug 'bronson/vim-trailing-whitespace
-'
+Plug 'bronson/vim-trailing-whitespace'
 
 call plug#end()
 
