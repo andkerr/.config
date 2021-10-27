@@ -29,7 +29,9 @@ inoremap jk <ESC>
 inoremap kj <ESC>
 
 " press space to un-highlight search results
-nnoremap <leader><space> :let @/=""<CR> 
+nnoremap <leader><space> :let @/=""<CR>
+
+inoremap <leader><CR> <CR><CR><C-o>k<tab>
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -47,6 +49,11 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 " NERD tree - file tree browsing in Vim
 Plug 'scrooloose/nerdtree'
+" deliminate - smart bracket and quote completion
+Plug 'raimondi/delimitmate'
+" trailing-whitespace - highlights and allows for quick removal of whitespace
+Plug 'bronson/vim-trailing-whitespace
+'
 
 call plug#end()
 
