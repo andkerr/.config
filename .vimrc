@@ -31,7 +31,7 @@ inoremap kj <ESC>
 " press space to un-highlight search results
 nnoremap <leader><space> :let @/=""<CR>
 
-inoremap <leader><CR> <CR><CR><C-o>k<tab>
+inoremap <leader><CR> <CR><C-o>k<C-o>$<CR>
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
