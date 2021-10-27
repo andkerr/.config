@@ -1,5 +1,3 @@
-" ######### Basics #########
-
 set number " enable line numbers
 if !exists("g:syntax_on") " Enable syntax highlighting, only once
     syntax enable
@@ -12,23 +10,16 @@ set autoindent " continue (?) current indentation level on <Enter>
 set shiftwidth=4
 set expandtab " insert tabs as whitespaces
 
-" ######### Window Layout #########
-
 set showcmd " Display previous command in bottom bar
 set wildmenu " visual autocomplete for command menu
 
-" ######### Colours #########
-
 colorscheme molokai
-highlight ColorColumn ctermbg=25 guibg=lightgrey
 
-" ######### Highlighting #########
 
 set hlsearch " highlight all results
 set ignorecase " ignore case in search
 set incsearch " show search results as you type
 
-" ######### Remappings #########
 
 let mapleader="," " lead mappings with a comma
 
@@ -38,8 +29,6 @@ inoremap kj <ESC>
 
 " press space to un-highlight search results
 nnoremap <leader><space> :let @/=""<CR> 
-
-" ######### Configure vim-plug #########
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -53,10 +42,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 " vim-airline-themes
 Plug 'vim-airline/vim-airline-themes'
-" deliminate - syntax aware quote/bracket completion
-Plug 'raimondi/delimitmate'
 " sytastic - syntax checking
 Plug 'scrooloose/syntastic'
+" NERD tree - file tree browsing in Vim
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
