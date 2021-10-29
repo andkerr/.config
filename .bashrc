@@ -19,10 +19,10 @@ PATH=$PATH:$HOME/bin/
 # >>> aliases >>>
 
 # long file format
-alias l='ls -l'
+alias l='gls -la --color -h --group-directories-first'
 
-# config - runs commands relate to config files repository
-alias config='/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME'
+# dotfiles - runs commands relate to dotfiles files repository
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # activate and navigate to 'kerr' conda enivronment
 alias ke='cd ~/mambaforge/envs/kerr; conda activate kerr'
