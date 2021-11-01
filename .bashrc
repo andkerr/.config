@@ -31,7 +31,7 @@ alias ke='cd ~/mambaforge/envs/kerr; conda activate kerr'
 alias tp='cd ~/mambaforge/envs/tpyth; conda activate tpyth'
 
 # activate and navigate to 'glotzer' conda environment
-alias glot='cd ~/mambaforge/envs/glotzer; conda activate glotzer' 
+alias glot='cd ~/mambaforge/envs/glotzer; conda activate glotzer'
 
 # activate and navigate to 'physics411' conda environment
 alias p411='cd ~/mambaforge/envs/physics411; conda activate physics411'
@@ -47,6 +47,11 @@ alias mh='cd ~/mambaforge/envs/mhackers; conda activate mhackers'
 
 # activate and navigate to 'flaskapp' conda environment
 alias fa='cd ~/mambaforge/envs/flaskapp; conda activate flaskapp'
+
+nvim=$(which nvim)
+if [ $nvim != "" ]; then
+    alias vim="${nvim}"
+fi
 
 # <<< aliases <<<
 
