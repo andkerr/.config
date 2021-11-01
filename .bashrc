@@ -48,6 +48,7 @@ alias mh='cd ~/mambaforge/envs/mhackers; conda activate mhackers'
 # activate and navigate to 'flaskapp' conda environment
 alias fa='cd ~/mambaforge/envs/flaskapp; conda activate flaskapp'
 
+# run vim as nvim if it is installed
 nvim=$(which nvim)
 if [ $nvim != "" ]; then
     alias vim="${nvim}"
