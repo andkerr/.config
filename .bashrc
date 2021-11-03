@@ -49,8 +49,7 @@ alias mh='cd ~/mambaforge/envs/mhackers; conda activate mhackers'
 alias fa='cd ~/mambaforge/envs/flaskapp; conda activate flaskapp'
 
 # run vim as nvim if it is installed
-nvim=$(which nvim)
-if [ $nvim != "" ]; then
+if which nvim &> /dev/null; then
     alias vim="${nvim}"
 fi
 
