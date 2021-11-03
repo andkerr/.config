@@ -21,7 +21,7 @@ PATH=$PATH:$HOME/bin/
 # long file format
 alias l='gls -la --color -h --group-directories-first'
 
-# dotfiles - runs commands relate to dotfiles files repository
+# dotfiles - runs commands against my dotfiles repository
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # activate and navigate to 'kerr' conda enivronment
@@ -53,6 +53,9 @@ nvim=$(which nvim)
 if [ $nvim != "" ]; then
     alias vim="${nvim}"
 fi
+
+alias weatherTO='curl wttr.in/Toronto?m'
+alias weatherAA='curl wttr.in/Ann_Arbor?m'
 
 # <<< aliases <<<
 
