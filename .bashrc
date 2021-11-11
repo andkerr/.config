@@ -50,7 +50,7 @@ alias fa='cd ~/mambaforge/envs/flaskapp; conda activate flaskapp'
 
 # run vim as nvim if it is installed
 if which nvim &> /dev/null; then
-    alias vim="${nvim}"
+    alias vim="nvim"
 fi
 
 alias weatherTO='curl wttr.in/Toronto?m'

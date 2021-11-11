@@ -21,6 +21,10 @@ set hlsearch " highlight all results
 set ignorecase " ignore case in search
 set incsearch " show search results as you type
 
+" automatically wrap text at 80 chars for .txt files
+au BufRead,BufEnter *.txt set tw=79
+
+" ############# MAPPINGS #############
 
 let mapleader="," " lead mappings with a comma
 
@@ -32,6 +36,8 @@ inoremap kj <ESC>
 nnoremap <leader><space> :let @/=""<CR>
 
 inoremap <leader><CR> <CR><C-o>k<C-o>$<CR>
+
+" ############# PLUGINS ############
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
