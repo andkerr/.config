@@ -4,10 +4,10 @@ if !exists("g:syntax_on") " Enable syntax highlighting, only once
 endif
 set colorcolumn=80 " mark 80 char. limit
 set cursorline
-set softtabstop=4 " Backspace following tab rmvs. all 4 white spaces
+set softtabstop=2 " Backspace following tab rmvs. all 4 white spaces
 
 set autoindent " continue (?) current indentation level on <Enter>
-set shiftwidth=4
+set shiftwidth=2
 set expandtab " insert tabs as whitespaces
 
 set showcmd " Display previous command in bottom bar
