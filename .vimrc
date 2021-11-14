@@ -2,7 +2,7 @@ set number " enable line numbers
 if !exists("g:syntax_on") " Enable syntax highlighting, only once
     syntax enable
 endif
-set colorcolumn=80 " mark 80 char. limit
+set colorcolumn=79 " mark 79 char. limit
 set cursorline
 set softtabstop=2 " Backspace following tab rmvs. all 4 white spaces
 
@@ -13,7 +13,7 @@ set expandtab " insert tabs as whitespaces
 set showcmd " Display previous command in bottom bar
 set wildmenu " visual autocomplete for command menu
 
-colorscheme molokai
+colorscheme gruvbox
 
 set mouse=a " enable mouse support
 
