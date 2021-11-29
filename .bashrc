@@ -14,7 +14,10 @@ if [ -f $HOME/.prompt ]; then
 fi
 
 # Setting PATH for custom shell scripts
-PATH=$PATH:$HOME/bin/
+export PATH=$PATH:$HOME/bin/
+
+# POSTGRES path
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 # >>> aliases >>>
 
