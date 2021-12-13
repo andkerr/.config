@@ -21,6 +21,9 @@ set hlsearch " highlight all results
 set ignorecase " ignore case in search
 set incsearch " show search results as you type
 
+set splitbelow " open new split panes down and to the right
+set splitright
+
 " automatically wrap text at 80 chars for .txt files
 au BufRead,BufEnter *.txt set tw=79
 
