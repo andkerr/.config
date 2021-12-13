@@ -1,4 +1,6 @@
 set number " enable line numbers
+set relativenumber " enable relative line numbers
+
 if !exists("g:syntax_on") " Enable syntax highlighting, only once
     syntax enable
 endif
@@ -23,6 +25,8 @@ set incsearch " show search results as you type
 
 set splitbelow " open new split panes down and to the right
 set splitright
+
+set hidden " allow a buffer that has unsaved changes to be hidden
 
 " automatically wrap text at 80 chars for .txt files
 au BufRead,BufEnter *.txt set tw=79
