@@ -69,4 +69,9 @@ today() {
     date +"%A, %B %-d, %Y"
 }
 
+mcd() {
+    mkdir -p $1
+    cd $1
+}
+
 # <<< functions <<<
