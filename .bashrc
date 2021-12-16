@@ -22,7 +22,7 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 # >>> aliases >>>
 
 # long file format
-alias l='gls -la --color -h --group-directories-first'
+alias l='gls -laF --color -h --group-directories-first'
 
 # dotfiles - runs commands against my dotfiles repository
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
