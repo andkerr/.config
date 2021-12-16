@@ -1,9 +1,6 @@
 set number " enable line numbers
 set relativenumber " enable relative line numbers
 
-if !exists("g:syntax_on") " Enable syntax highlighting, only once
-    syntax enable
-endif
 set colorcolumn=79 " mark 79 char. limit
 set cursorline
 set softtabstop=4 " Backspace following tab rmvs. all 4 white spaces
@@ -15,7 +12,7 @@ set expandtab " insert tabs as whitespaces
 set showcmd " Display previous command in bottom bar
 set wildmenu " visual autocomplete for command menu
 
-colorscheme gruvbox
+colorscheme gruvbox " only use gruvbox for its softer colours
 
 set mouse=a " enable mouse support
 
@@ -44,7 +41,7 @@ nnoremap <leader><space> :let @/=""<CR>
 
 inoremap <leader><CR> <CR><C-o>k<C-o>$<CR>
 
-" 'pedagoic' mappings --> don't use arrow keys!
+" 'pedagoic' mappings --> don't use arrow keys
 nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up>    :echoe "Use k"<CR>
@@ -99,3 +96,5 @@ let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Werror -pedantic"
 " ######### vim-airline-themes - Plugin Settings #########
 
 let g:airline_theme='powerlineish'
+
+syntax off " ensure that syntax highlight in not re-enabled by other rules
