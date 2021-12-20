@@ -1,7 +1,0 @@
-[user]
-	name = Andrew Kerr
-	email = kerrand@protonmail.com
-[pull]
-	rebase = false
-[init]
-	defaultBranch = main
