@@ -9,6 +9,11 @@ if [ -d $HOME/bin/ ]; then
     export PATH=$PATH:$HOME/bin/
 fi
 
+# Setting PATH for custom shell scripts
+if [ -d $HOME/.local/bin ]; then
+    export PATH=$PATH:$HOME/.local/bin/
+fi
+
 # disable command history
 history -cw
 set +o history
@@ -47,6 +52,13 @@ alias mdst='cd ~/mambaforge/envs/mdst; conda activate mdst'
 
 # activate and navigate to 'mhackers' conda environment
 alias mh='cd ~/mambaforge/envs/mhackers; conda activate mhackers'
+
+# OS-specific aliases
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    alias sapt='sudo apt'
+    alias pbcopy='xclip -sel clip'
+fi
 
 # <<< aliases <<<
 
