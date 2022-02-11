@@ -60,6 +60,7 @@ fi
 alias weatherTO='curl wttr.in/Toronto?m'
 alias weatherAA='curl wttr.in/Ann_Arbor?m'
 
+
 # <<< aliases <<<
 
 # >>> functions >>>>
@@ -72,6 +73,11 @@ today() {
 mcd() {
     mkdir -p $1
     cd $1
+}
+
+mhw() {
+    class=${1}
+    ls -t ~/Downloads/*.pdf | head -n 1 | xargs -J % mv % "~/Google\ Drive/OnlineLearning/${class}"
 }
 
 # <<< functions <<<
