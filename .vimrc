@@ -30,7 +30,7 @@ au BufRead,BufEnter *.txt set tw=79
 
 " ############# MAPPINGS #############
 
-let mapleader="," " lead mappings with a comma
+let mapleader="." " lead mappings with a comma
 
 " exit insert mode from home row
 inoremap jk <ESC>
