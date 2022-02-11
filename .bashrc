@@ -1,28 +1,33 @@
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
-# -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
-export PATH="/Users/andrewkerr/Library/Caches/activestate/bin:$PATH"
-# -- STOP ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# direct .bashrc to read custom prompt script
-if [ -f $HOME/.prompt ]; then
-    . $HOME/.prompt
+# Setting PATH for custom shell scripts
+if [ -d $HOME/bin/ ]; then
+    export PATH=$PATH:$HOME/bin/
 fi
 
 # Setting PATH for custom shell scripts
-export PATH=$PATH:$HOME/bin/
+if [ -d $HOME/.local/bin ]; then
+    export PATH=$PATH:$HOME/.local/bin/
+fi
 
-# POSTGRES path
-export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+# disable command history
+history -cw
+set +o history
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# custom prompt
+PS1='\w $ '
 
 # >>> aliases >>>
 
 # long file format
-alias l='gls -laF --color -h --group-directories-first'
+alias l='ls -laF --color -h --group-directories-first'
 
 # dotfiles - runs commands against my dotfiles repository
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -48,27 +53,22 @@ alias mdst='cd ~/mambaforge/envs/mdst; conda activate mdst'
 # activate and navigate to 'mhackers' conda environment
 alias mh='cd ~/mambaforge/envs/mhackers; conda activate mhackers'
 
-# activate and navigate to 'flaskapp' conda environment
-alias fa='cd ~/mambaforge/envs/flaskapp; conda activate flaskapp'
+# OS-specific aliases
 
-# run vim as nvim if it is installed
-if which nvim &> /dev/null; then
-    alias vim="nvim"
-    export EDITOR=nvim
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    alias sapt='sudo apt'
+    alias pbcopy='xclip -sel clip'
 fi
 
 alias weatherTO='curl wttr.in/Toronto?m'
 alias weatherAA='curl wttr.in/Ann_Arbor?m'
 
 
+=======
 # <<< aliases <<<
 
-# >>> functions >>>>
 
-today() {
-    echo -n "Today's date is: "
-    date +"%A, %B %-d, %Y"
-}
+# >>> functions >>>>
 
 mcd() {
     mkdir -p $1
