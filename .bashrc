@@ -15,8 +15,8 @@ if [ -d $HOME/.local/bin ]; then
 fi
 
 # disable command history
-history -cw
-set +o history
+# history -cw
+# set +o history
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -27,7 +27,6 @@ PS1='\w $ '
 # >>> aliases >>>
 
 # long file format
-alias l='ls -laF --color -h --group-directories-first'
 
 # dotfiles - runs commands against my dotfiles repository
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -53,18 +52,25 @@ alias mdst='cd ~/mambaforge/envs/mdst; conda activate mdst'
 # activate and navigate to 'mhackers' conda environment
 alias mh='cd ~/mambaforge/envs/mhackers; conda activate mhackers'
 
+if which nvim &> /dev/null; then
+    alias vim='nvim'
+fi
+
 # OS-specific aliases
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     alias sapt='sudo apt'
     alias pbcopy='xclip -sel clip'
+    alias l='ls -laF --color -h --group-directories-first'
+elif [[ "$OSTYPE" == "darwin20" ]]; then
+    echo "you're on macOS"
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+    alias l='ls -laFh'
 fi
 
 alias weatherTO='curl wttr.in/Toronto?m'
 alias weatherAA='curl wttr.in/Ann_Arbor?m'
 
-
-=======
 # <<< aliases <<<
 
 
@@ -73,11 +79,6 @@ alias weatherAA='curl wttr.in/Ann_Arbor?m'
 mcd() {
     mkdir -p $1
     cd $1
-}
-
-mhw() {
-    class=${1}
-    ls -t ~/Downloads/*.pdf | head -n 1 | xargs -J % mv % "~/Google\ Drive/OnlineLearning/${class}"
 }
 
 # <<< functions <<<
