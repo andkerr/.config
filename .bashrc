@@ -52,10 +52,6 @@ alias mdst='cd ~/mambaforge/envs/mdst; conda activate mdst'
 # activate and navigate to 'mhackers' conda environment
 alias mh='cd ~/mambaforge/envs/mhackers; conda activate mhackers'
 
-if which nvim &> /dev/null; then
-    alias vim='nvim'
-fi
-
 # OS-specific aliases
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
