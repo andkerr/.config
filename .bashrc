@@ -15,8 +15,10 @@ if [ -d $HOME/.local/bin ]; then
 fi
 
 # disable command history
-history -cw
-set +o history
+# history -cw
+# set +o history
+history -c
+unset HISTFILE
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
