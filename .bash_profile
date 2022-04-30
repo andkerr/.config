@@ -17,9 +17,5 @@ else
     fi
 fi
 unset __conda_setup
-
-if [ -f "/Users/andrewkerr/mambaforge/etc/profile.d/mamba.sh" ]; then
-    . "/Users/andrewkerr/mambaforge/etc/profile.d/mamba.sh"
-fi
 # <<< conda initialize <<<
 
