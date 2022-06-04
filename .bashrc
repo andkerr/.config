@@ -27,6 +27,7 @@ PS1='\w $ '
 # >>> aliases >>>
 
 # long file format
+alias l='ls -la'
 
 # dotfiles - runs commands against my dotfiles repository
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
