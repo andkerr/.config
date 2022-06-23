@@ -97,5 +97,3 @@ let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Werror -pedantic"
 " ######### vim-airline-themes - Plugin Settings #########
 
 let g:airline_theme='powerlineish'
-
-syntax off " ensure that syntax highlight in not re-enabled by other rules
