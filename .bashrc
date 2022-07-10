@@ -32,9 +32,6 @@ alias l='ls -la'
 # dotfiles - runs commands against my dotfiles repository
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-# activate and navigate to 'kerr' conda enivronment
-alias ke='cd ~/mambaforge/envs/kerr; conda activate kerr'
-
 # OS-specific aliases
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
