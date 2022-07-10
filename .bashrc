@@ -22,7 +22,7 @@ fi
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # custom prompt
-PS1='\w $ '
+PS1='\W $ '
 
 # >>> aliases >>>
 
