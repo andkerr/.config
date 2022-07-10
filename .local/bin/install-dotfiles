@@ -2,8 +2,8 @@
 
 repository="git@github.com:andkerr/.config.git"
 export GIT_WORK_TREE="$HOME"
-export GIT_DIR="$WORKING_TREE/.dotfiles"
-backup_dir="$WORKING_TREE/dotfiles.backup"
+export GIT_DIR="$GIT_WORK_TREE/.dotfiles"
+backup_dir="$GIT_WORK_TREE/dotfiles.backup"
 
 function clone() {
     git clone --bare "$repository" "$GIT_DIR"
@@ -11,7 +11,7 @@ function clone() {
 
 function backup() {
     for file in $(git ls-tree -r --name-only HEAD); do
-	if [[ -e "$WORKING_TREE/$file" ]]; then
+	if [[ -e "$GIT_WORK_TREE/$file" ]]; then
 	    mkdir -p "$backup_dir"
 	    mv -v "$file" "$backup_dir"
 	fi
