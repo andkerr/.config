@@ -17,3 +17,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+. "$HOME/.cargo/env"
+
+# chruby stuffs
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.2

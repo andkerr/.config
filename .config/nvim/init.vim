@@ -1,13 +1,18 @@
-set number " enable line numbers
-set relativenumber " enable relative line numbers
+" set number " enable line numbers
+" set relativenumber " enable relative line numbers
 
 set colorcolumn=79 " mark 79 char. limit
 set cursorline
 set softtabstop=4 " Backspace following tab rmvs. all 4 white spaces
 
 set autoindent " continue (?) current indentation level on <Enter>
-set shiftwidth=2
+set shiftwidth=4
 set expandtab " insert tabs as whitespaces
+
+" html file specifics (htmldjango covers .html files
+" that incorporate Jinja template features)
+autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2 expandtab
 
 set showcmd " Display previous command in bottom bar
 set wildmenu " visual autocomplete for command menu
@@ -27,6 +32,9 @@ set hidden " allow a buffer that has unsaved changes to be hidden
 
 " automatically wrap text at 80 chars for .txt files
 au BufRead,BufEnter *.txt set tw=79
+
+" ############# COMMANDS #############
+command CAEN !make sync2caen
 
 " ############# MAPPINGS #############
 

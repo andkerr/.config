@@ -4,6 +4,9 @@ case $- in
       *) return;;
 esac
 
+# don't tell me that zsh is the default macOS shell now
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # Setting PATH for custom shell scripts
 if [ -d $HOME/bin/ ]; then
     export PATH=$PATH:$HOME/bin/
@@ -22,7 +25,7 @@ fi
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # custom prompt
-PS1='\W $ '
+PS1="\[\e[32m\][\[\e[m\]\[\e[31m\]\u\[\e[m\]\[\e[33m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[36m\]\W\[\e[m\]\[\e[32m\]]\[\e[m\]\[\e[32m\]\\$\[\e[m\] "
 
 # >>> aliases >>>
 
@@ -31,6 +34,15 @@ alias l='ls -la'
 
 # dotfiles - runs commands against my dotfiles repository
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# eecs281 Makefile CAEN rsync
+alias s2c='make sync2caen'
+
+# condense spaces
+alias csp='sed -e "s/[[:space:]]\{2,\}/ /g"'
+
+# login to CAEN
+alias caen='ssh kerrand@login.engin.umich.edu'
 
 # OS-specific aliases
 
@@ -62,3 +74,6 @@ mcd() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. "$HOME/.cargo/env"
+
+[ -f "/Users/andrewkerr/.ghcup/env" ] && source "/Users/andrewkerr/.ghcup/env" # ghcup-env
