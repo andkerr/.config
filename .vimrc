@@ -28,8 +28,8 @@ set splitbelow " open new split panes down and to the right
 set splitright
 set termwinsize=15*0
 
-colorscheme gruvbox " enable for softbackground and font colours
-set background=dark
+colorscheme iceberg " enable for softbackground and font colours
+"set background=dark
 
 set hidden " allow a buffer that has unsaved changes to be hidden
 
