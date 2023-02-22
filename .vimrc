@@ -29,7 +29,7 @@ set splitright
 set termwinsize=15*0
 
 colorscheme iceberg " enable for softbackground and font colours
-"set background=dark
+set background=dark
 
 set hidden " allow a buffer that has unsaved changes to be hidden
 
