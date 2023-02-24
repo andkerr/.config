@@ -3,6 +3,7 @@ syntax on
 set colorcolumn=79 " mark 79 char. limit
 set cursorline
 set autoindent " continue (?) current indentation level on <Enter>
+set smartindent
 
 set tabstop=4
 set softtabstop=0
