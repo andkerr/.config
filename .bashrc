@@ -17,9 +17,10 @@ if [ -d $HOME/.local/bin ]; then
     export PATH=$PATH:$HOME/.local/bin/
 fi
 
-# disable command history
-# history -cw
-# set +o history
+# include racket command line tools
+if [ -d "/Applications/Racket v8.8/bin" ]; then
+    export PATH=$PATH:/Applications/Racket\ v8.8/bin
+fi
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"

@@ -3,6 +3,7 @@ syntax on
 set colorcolumn=79 " mark 79 char. limit
 set cursorline
 set autoindent " continue (?) current indentation level on <Enter>
+set smartindent
 
 set tabstop=4
 set softtabstop=0
@@ -29,7 +30,7 @@ set splitright
 set termwinsize=15*0
 
 colorscheme iceberg " enable for softbackground and font colours
-"set background=dark
+set background=dark
 
 set hidden " allow a buffer that has unsaved changes to be hidden
 
