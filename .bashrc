@@ -45,6 +45,9 @@ alias csp='sed -e "s/[[:space:]]\{2,\}/ /g"'
 # login to CAEN
 alias caen='ssh kerrand@login.engin.umich.edu'
 
+CXXFLAGS='-Wall -pedantic-errors -std=c++17'
+alias cc='g++ ${CXXFLAGS}'
+
 # OS-specific aliases
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
@@ -55,9 +58,6 @@ elif [[ "$OSTYPE" == "darwin20" ]]; then
     export BASH_SILENCE_DEPRECATION_WARNING=1
     alias l='ls -laFh'
 fi
-
-alias weatherTO='curl wttr.in/Toronto?m'
-alias weatherAA='curl wttr.in/Ann_Arbor?m'
 
 # <<< aliases <<<
 
