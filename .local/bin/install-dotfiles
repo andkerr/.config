@@ -23,6 +23,8 @@ install() {
     git config status.showUntrackedFiles no
 }
 
+echo "This install script accesses Github.com using SSH"
 clone
 backup
 install
+echo "Done! Please log back in to source your new config."

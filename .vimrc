@@ -32,9 +32,9 @@ if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install fai
     let g:airline_theme='gruvbox'
 endif
 
-" ############# INDENTATION AND SPLITS #############
+" ############# INDENTATION, SPLITS, COLOURS #############
 
-set background=dark
+set background=light
 set termguicolors
 syntax on
 
