@@ -34,8 +34,10 @@ endif
 
 " ############# INDENTATION, SPLITS, COLOURS #############
 
+if has('termguicolor')
+    set termguicolors
+endif
 set background=light
-set termguicolors
 syntax on
 
 set nocursorline
