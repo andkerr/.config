@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# To use this script on a new system, run
+#
+# curl https://raw.githubusercontent.com/andkerr/dotfiles/main/.local/bin/install-dotfiles | /bin/sh
+
 repository="ssh://git@ssh.github.com:443/andkerr/dotfiles.git"
 export GIT_WORK_TREE="$HOME"
 export GIT_DIR="$GIT_WORK_TREE/.dotfiles_git"
