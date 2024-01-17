@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
 
-repository="git@github.com:andkerr/.config.git"
+repository="git@github.com:andkerr/dotfiles.git"
 export GIT_WORK_TREE="$HOME"
-export GIT_DIR="$GIT_WORK_TREE/.dotfiles"
-backup_dir="$GIT_WORK_TREE/dotfiles.backup"
+export GIT_DIR="$GIT_WORK_TREE/.dotfiles_git"
+backup_dir="$GIT_WORK_TREE/.dotfiles_backup"
 
-function clone() {
+clone() {
     git clone --bare "$repository" "$GIT_DIR"
 }
 
-function backup() {
+backup() {
     for file in $(git ls-tree -r --name-only HEAD); do
-	if [[ -e "$GIT_WORK_TREE/$file" ]]; then
-	    mkdir -p "$backup_dir"
-	    mv -v "$file" "$backup_dir"
-	fi
+    if [[ -e "$GIT_WORK_TREE/$file" ]]; then
+        mkdir -p "$backup_dir"
+        mv -v "$file" "$backup_dir"
+    fi
     done
 }
 
-function install() {
+install() {
     git checkout
     git config status.showUntrackedFiles no
 }
