@@ -87,8 +87,8 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
 " html file specifics (htmldjango covers .html files
 " that incorporate Jinja template features)
-autocmd FileType html setlocal shiftwidth=2 softtabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2
+autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2 expandtab
 
 autocmd FileType markdown setlocal textwidth=80 wrap
 
