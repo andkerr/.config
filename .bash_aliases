@@ -106,11 +106,6 @@ cscup() {
     (cd "$CSCOPE_DIR" && cscope -bq -i"$CSCOPE_DIR/cscope.files")
 }
 
-if [ ! -e "$CSCOPE_DB" ]; then
-    echo "Could not find $CSCOPE_DB, updating cscope files..."
-    cscup
-fi
-
 dobuild() {
     # Note that we use "$@" to let each command-line parameter expand to a
     # separate word. The quotes around "$@" are essential!

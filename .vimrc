@@ -23,6 +23,11 @@ if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install fai
 
     call plug#end()
 
+    if v:version <= 800 && !exists('##TextYankPost')
+        nmap y <Plug>(highlightedyank)
+        xmap y <Plug>(highlightedyank)
+        omap y <Plug>(highlightedyank)
+    endif
     let g:highlightedyank_highlight_duration = 500
 
     colorscheme gruvbox
@@ -37,7 +42,7 @@ endif
 if has('termguicolor')
     set termguicolors
 endif
-set background=light
+set background=dark
 syntax on
 
 set nocursorline
