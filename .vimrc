@@ -23,6 +23,8 @@ if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install fai
 
     call plug#end()
 
+    let g:airline_powerline_fonts = 1 " enable airline chevrons
+
     if v:version <= 800 && !exists('##TextYankPost')
         nmap y <Plug>(highlightedyank)
         xmap y <Plug>(highlightedyank)
@@ -33,7 +35,6 @@ if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install fai
     colorscheme gruvbox
     let g:gruvbox_contrast_light='hard'
     let g:gruvbox_contrast_dark='hard'
-
     let g:airline_theme='gruvbox'
 endif
 
