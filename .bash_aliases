@@ -26,6 +26,8 @@ alias fmake="find -type f -name 'makefile*' -o -name '*.mk'"
 
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles_git/ --work-tree=$HOME"
 
+alias ggrep="git grep --recurse-submodules"
+
 ginc () {
     grep -in -E "#include [<\"]$1[>\"]"
 }
