@@ -74,11 +74,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [[ ! "$TERM" =~ linux ]] && [ -z "$TMUX" ]; then
-    # exec tmux new-session -A -s main
-    tmux new-session -A -s main
-fi
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
