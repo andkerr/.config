@@ -1,1 +1,3 @@
-autocmd BufWritePost * !shellcheck --severity=warning <afile>
+if executable('shellcheck')
+    autocmd BufWritePost * !shellcheck --severity=warning <afile>
+endif
