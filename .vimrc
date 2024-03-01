@@ -70,6 +70,7 @@ let mapleader=" "
 
 " un-highlight search results
 nnoremap <leader>. :let @/=""<CR>
+nnoremap <leader>cf :!clear && make %:p:h<CR>
 
 " 'pedagoic' mappings --> don't use arrow keys
 nnoremap <Left>  :echoe "Use h"<CR>

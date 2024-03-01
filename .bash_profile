@@ -19,7 +19,6 @@ if [ -d ~/.local/lib/pkgconfig ]; then
     export PKG_CONFIG_PATH
 fi
 
-
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
