@@ -23,8 +23,6 @@ if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install fai
 
     call plug#end()
 
-    let g:airline_powerline_fonts = 1 " enable airline chevrons
-
     if v:version <= 800 && !exists('##TextYankPost')
         nmap y <Plug>(highlightedyank)
         xmap y <Plug>(highlightedyank)
@@ -108,3 +106,15 @@ set hidden " allow a buffer that has unsaved changes to be hidden
 au BufRead,BufEnter *.txt set tw=79
 
 set clipboard=unnamedplus " yank to system clipboard
+
+function Shellcheck()
+    if (&filetype == 'sh')
+        !shellcheck --severity=warning %
+    endif
+endfunction
+
+autocmd BufWritePost * {
+        if (&filetype == 'sh')
+            !shellcheck --severity=warning <afile>
+        endif
+    }
