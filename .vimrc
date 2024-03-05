@@ -83,6 +83,10 @@ inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
+" execute the current file
+
+nnoremap <leader>r :!clear;%:p \| less<CR>
+
 " ############# MISCELLANEOUS #############
 
 " html file specifics (htmldjango covers .html files
