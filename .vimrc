@@ -112,14 +112,8 @@ au BufRead,BufEnter *.txt set tw=79
 
 set clipboard=unnamedplus " yank to system clipboard
 
-function Shellcheck()
-    if (&filetype == 'sh')
-        !shellcheck --severity=warning %
-    endif
-endfunction
-
 autocmd BufWritePost * {
-        if (&filetype == 'sh')
-            !shellcheck --severity=warning <afile>
+        if (executable('shellcheck') && &filetype == 'sh')
+            !shellcheck -x --severity=info <afile>
         endif
     }
