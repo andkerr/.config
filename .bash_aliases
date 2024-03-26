@@ -17,6 +17,6 @@ alias fmake='find -type f -name "makefile*" -o -name "*.mk"'
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles_git/ --work-tree=$HOME'
 
-alias todo='/usr/bin/git --git-dir=$HOME/.todo/ --work-tree=$HOME'
+alias todo='/usr/bin/git --git-dir=$HOME/.todo_git/ --work-tree=$HOME'
 
 alias ggrep='git grep --recurse-submodules'
