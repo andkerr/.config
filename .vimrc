@@ -114,6 +114,6 @@ set clipboard=unnamedplus " yank to system clipboard
 
 autocmd BufWritePost * {
         if (executable('shellcheck') && &filetype == 'sh')
-            !shellcheck -x --severity=info <afile>
+            !shellcheck -x --severity=info --exclude=1091 <afile>
         endif
     }
