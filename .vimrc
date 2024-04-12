@@ -17,6 +17,7 @@ if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install fai
     Plug 'morhetz/gruvbox'
 
     Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-vinegar'
 
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
