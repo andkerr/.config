@@ -20,3 +20,9 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles_git/ --work-tree=$HOME'
 alias todo='/usr/bin/git --git-dir=$HOME/.todo_git/ --work-tree=$HOME'
 
 alias ggrep='git grep --recurse-submodules'
+
+# set operations
+alias setd='comm -23 '
+alias seti='comm -12 '
+alias setu='comm --output-delimiter="" '
+alias setsd='comm --output-delimiter="" -3 '
