@@ -1,3 +1,6 @@
+let mapleader=" "
+let maplocalleader=" "
+
 " ############# PLUGINS #############
 
 " automatically install vim-plug
@@ -10,14 +13,11 @@ endif
 if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install failed
     call plug#begin()
 
-    Plug 'junegunn/goyo.vim'
-
     Plug 'machakann/vim-highlightedyank'
 
     Plug 'morhetz/gruvbox'
 
     Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-vinegar'
 
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -32,16 +32,11 @@ if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install fai
     let g:highlightedyank_highlight_duration = 500
 
     colorscheme gruvbox
-    let g:gruvbox_contrast_light='hard'
-    let g:gruvbox_contrast_dark='hard'
     let g:airline_theme='gruvbox'
 endif
 
 " ############# INDENTATION, SPLITS, COLOURS #############
 
-if has('termguicolor')
-    set termguicolors
-endif
 set background=dark
 syntax on
 
@@ -54,11 +49,11 @@ set colorcolumn=80
 set textwidth=0 " don't wrap long lines by default
 
 " various niceties for indenting with spaces
+set expandtab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=0
 set smarttab
-set expandtab
 
 " open new split panes down and to the right
 set splitbelow
@@ -66,8 +61,6 @@ set splitright
 set tabpagemax=100
 
 " ############# MAPPINGS #############
-
-let mapleader=" "
 
 " un-highlight search results
 nnoremap <leader>. :let @/=""<CR>
@@ -90,11 +83,6 @@ nnoremap <leader>r :!clear;%:p \| less<CR>
 
 " ############# MISCELLANEOUS #############
 
-" html file specifics (htmldjango covers .html files
-" that incorporate Jinja template features)
-autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2 expandtab
-
 autocmd FileType markdown setlocal textwidth=80 wrap
 
 set showcmd " Display previous command in bottom bar
@@ -108,13 +96,10 @@ set incsearch " show search results as you type
 
 set hidden " allow a buffer that has unsaved changes to be hidden
 
-" automatically wrap text at 80 chars for .txt files
-au BufRead,BufEnter *.txt set tw=79
-
 set clipboard=unnamedplus " yank to system clipboard
 
 autocmd BufWritePost * {
-        if (executable('shellcheck') && &filetype == 'sh')
-            !shellcheck -x --severity=info --exclude=1091 <afile>
-        endif
-    }
+    if (executable('shellcheck') && &filetype == 'sh')
+        !shellcheck -x --severity=info --exclude=1091 <afile>
+    endif
+}
