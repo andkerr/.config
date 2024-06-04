@@ -21,7 +21,7 @@ alias todo='/usr/bin/git --git-dir=$HOME/.todo_git/ --work-tree=$HOME'
 
 alias ggrep='git grep --recurse-submodules'
 
-alias mkcsc='cscope -bqi <(find -type f -name "*.[ch]" -o -name "*.cpp"'
+alias mkcsc='cscope -bqi <(find -type f -name "*.[ch]" -o -name "*.cpp")'
 
 # set operations
 alias setd='comm -23 '
