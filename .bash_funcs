@@ -1,0 +1,6 @@
+#shellcheck shell=bash
+#shellcheck shell=bash
+
+mcd() {
+    mkdir "$1" && cd "$1" || exit
+}

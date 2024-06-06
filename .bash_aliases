@@ -1,5 +1,6 @@
-#!/bin/bash
+#shellcheck shell=bash
 
+# If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
@@ -8,8 +9,6 @@ esac
 alias cusr='users | tr " " "\n" | uniq -c'
 
 alias ducks='du -cksh * | sort -hr | head -n 15'
-
-alias fcpp='find . -regex ".*\.\(h\|c\|cpp\)"'
 
 alias less='less -R'
 

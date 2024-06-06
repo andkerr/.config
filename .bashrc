@@ -1,3 +1,5 @@
+#shellcheck shell=bash
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -63,7 +65,7 @@ else
 fi
 unset color_prompt force_color_prompt
 
-PROMPT_DIRTRIM=1
+PROMPT_DIRTRIM=2
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -105,6 +107,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+if [ -f ~/.bash_funcs ]; then
+    . ~/.bash_funcs
 fi
 
 # work-specific config

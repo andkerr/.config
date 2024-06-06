@@ -13,7 +13,7 @@ endif
 if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install failed
     call plug#begin()
 
-    Plug 'junegunn/fzf', { 'do' : { -> fzf#install() } }
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
     Plug 'machakann/vim-highlightedyank'
@@ -39,6 +39,8 @@ if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install fai
 endif
 
 " ############# INDENTATION, SPLITS, COLOURS #############
+
+set modeline
 
 set background=dark
 syntax on
@@ -103,6 +105,6 @@ set clipboard=unnamedplus " yank to system clipboard
 
 autocmd BufWritePost * {
     if (executable('shellcheck') && &filetype == 'sh')
-        !shellcheck -x --severity=info --exclude=1091 <afile>
+        !shellcheck -x --severity=info --exclude=1090,1091 <afile>
     endif
 }
