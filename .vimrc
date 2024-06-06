@@ -13,6 +13,9 @@ endif
 if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install failed
     call plug#begin()
 
+    Plug 'junegunn/fzf', { 'do' : { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+
     Plug 'machakann/vim-highlightedyank'
 
     Plug 'morhetz/gruvbox'
