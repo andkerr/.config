@@ -1,6 +1,13 @@
-#shellcheck shell=bash
+# vim: filetype=sh
 #shellcheck shell=bash
 
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 mcd() {
-    mkdir "$1" && cd "$1" || exit
+    # Disable warnings about not exiting after a cd failure
+    # shellcheck disable=SC2164
+    mkdir "$1" && cd "$1"
 }
