@@ -1,6 +1,8 @@
 let mapleader=" "
 let maplocalleader=" "
 
+source $VIMRUNTIME/defaults.vim
+
 " ############# PLUGINS #############
 
 " automatically install vim-plug
@@ -106,8 +108,7 @@ set hidden " allow a buffer that has unsaved changes to be hidden
 
 set clipboard=unnamedplus " yank to system clipboard
 
-autocmd BufWritePost * {
-    if (executable('shellcheck') && &filetype == 'sh')
-        !shellcheck -x --severity=info --exclude=1090,1091 <afile>
-    endif
-}
+autocmd BufWritePost *
+ \if (executable('shellcheck') && &filetype == 'sh')
+ \    !shellcheck -x --severity=info --exclude=1090,1091 <afile>
+ \endif

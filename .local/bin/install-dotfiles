@@ -4,7 +4,7 @@
 #
 # curl https://raw.githubusercontent.com/andkerr/dotfiles/main/.local/bin/install-dotfiles | /bin/sh
 
-repository="ssh://git@ssh.github.com:443/andkerr/dotfiles.git"
+repository="http://github.com/andkerr/dotfiles.git"
 export GIT_WORK_TREE="$HOME"
 export GIT_DIR="$GIT_WORK_TREE/.dotfiles_git"
 backup_dir="$GIT_WORK_TREE/.dotfiles_backup"
