@@ -13,6 +13,8 @@ endif
 if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install failed
     call plug#begin()
 
+    Plug 'alvan/vim-closetag'
+
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
@@ -96,6 +98,7 @@ set wildmenu " visual autocomplete for command menu
 set mouse=a " enable mouse support
 
 set hlsearch " highlight all results
+set nowrapscan " don't wrap around start/end of file when moving through search matches
 set ignorecase " ignore case in search
 set incsearch " show search results as you type
 

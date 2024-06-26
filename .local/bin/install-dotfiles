@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
 # To use this script on a new system, run
 #
@@ -15,7 +15,7 @@ clone() {
 
 backup() {
     for file in $(git ls-tree -r --name-only HEAD); do
-    if [[ -e "$GIT_WORK_TREE/$file" ]]; then
+    if [ -e "$GIT_WORK_TREE/$file" ]; then
         mkdir -p "$backup_dir"
         mv -v "$file" "$backup_dir"
     fi
