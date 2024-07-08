@@ -92,7 +92,8 @@ nnoremap <leader>r :!clear;%:p \| less<CR>
 
 " ############# MISCELLANEOUS #############
 
-autocmd FileType markdown setlocal textwidth=80 wrap
+autocmd FileType markdown setlocal textwidth=79 wrap
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
 
 set showcmd " Display previous command in bottom bar
 set wildmenu " visual autocomplete for command menu
