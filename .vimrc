@@ -52,7 +52,7 @@ set nocursorline
 set autoindent " continue (?) current indentation level on <Enter>
 set smartindent
 
-set colorcolumn=80
+set colorcolumn=79
 
 set textwidth=0 " don't wrap long lines by default
 
@@ -68,11 +68,16 @@ set splitbelow
 set splitright
 set tabpagemax=100
 
+set scrolloff=0
+
 " ############# MAPPINGS #############
 
 " un-highlight search results
 nnoremap <leader>. :let @/=""<CR>
 nnoremap <leader>cf :!clear && make %:p:h<CR>
+
+" make Y behave like C and D (instead of like yy)
+nnoremap Y y$
 
 " 'pedagoic' mappings --> don't use arrow keys
 nnoremap <Left>  :echoe "Use h"<CR>
