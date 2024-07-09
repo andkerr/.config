@@ -98,6 +98,7 @@ nnoremap <leader>d :r!date<CR>
 
 " ############# MISCELLANEOUS #############
 
+autocmd FileType text setlocal textwidth=79 wrap
 autocmd FileType markdown setlocal textwidth=79 wrap
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 
