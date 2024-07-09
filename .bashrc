@@ -65,7 +65,7 @@ else
 fi
 unset color_prompt force_color_prompt
 
-PROMPT_DIRTRIM=2
+PROMPT_DIRTRIM=1
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in

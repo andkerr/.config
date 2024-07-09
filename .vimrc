@@ -15,11 +15,6 @@ endif
 if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install failed
     call plug#begin()
 
-    Plug 'alvan/vim-closetag'
-
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-
     Plug 'machakann/vim-highlightedyank'
 
     Plug 'morhetz/gruvbox'
@@ -28,6 +23,8 @@ if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install fai
 
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+
+    Plug 'vim-python/python-syntax'
 
     call plug#end()
 
@@ -40,6 +37,8 @@ if !empty(glob(data_dir . '/autoload/plug.vim')) " just in case auto-install fai
 
     colorscheme gruvbox
     let g:airline_theme='gruvbox'
+
+    let g:python_highlight_all = 1
 endif
 
 " ############# INDENTATION, SPLITS, COLOURS #############
@@ -87,8 +86,10 @@ inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
 " execute the current file
-
 nnoremap <leader>r :!clear;%:p \| less<CR>
+
+" insert a timestamp
+nnoremap <leader>d :r!date<CR>
 
 " ############# MISCELLANEOUS #############
 
@@ -109,7 +110,8 @@ set hidden " allow a buffer that has unsaved changes to be hidden
 
 set clipboard=unnamedplus " yank to system clipboard
 
-autocmd BufWritePost *
- \if (executable('shellcheck') && &filetype == 'sh')
- \    !shellcheck -x --severity=info --exclude=1090,1091 <afile>
- \endif
+autocmd BufWritePost * {
+    if (executable('shellcheck') && &filetype == 'sh')
+        !shellcheck -x --severity=info --exclude=1090,1091 <afile>
+    endif
+}
